@@ -43,7 +43,7 @@ func main() {
 		log.Fatal("Cannot connect to database:", err)
 	}
 	log.Println("Connected to PostgreSQL!")
-
+    log.Println("Hello I am Vadin Mieir-Cucksey I am here")
 	http.HandleFunc("/users", getUsers)
 	http.HandleFunc("/add", addUser)
 

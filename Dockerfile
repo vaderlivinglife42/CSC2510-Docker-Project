@@ -10,7 +10,7 @@ RUN go build -o server .
 # Step 2: Run
 FROM alpine:3.20
 # TODO: 
-    # set WORKDIR to the /app directory
-    # copy our current directory to /app/server (hint - use --from=builder)
-    # expose port 8080 
-    # run our server using CMD and ./server
+WORKDIR /app
+COPY --from=builder /app/server .
+EXPOSE 8080
+CMD ./server
